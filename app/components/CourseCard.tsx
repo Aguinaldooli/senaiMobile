@@ -7,9 +7,10 @@ type propsCourseCard = {
     describe: string;
     likes: number;
     image: any;
+    onPress?: any;
 }
 
-export default function CourseCard({ title, describe, likes, image }: propsCourseCard) {
+export default function CourseCard({ title, describe, likes, image, onPress }: propsCourseCard) {
 
     const [count, setCount] = useState(likes);
 
@@ -18,7 +19,7 @@ export default function CourseCard({ title, describe, likes, image }: propsCours
     }
 
     return (
-        <View style={styles.card}>
+        <Pressable style={styles.card} onPress={onPress}>
             <Text style={styles.cardTitle}>{title}</Text>
 
             <Image source={image} style={styles.cardImage} />
@@ -32,7 +33,7 @@ export default function CourseCard({ title, describe, likes, image }: propsCours
                     ❤️ {count}
                 </Text>
             </Pressable>
-        </View>
+        </Pressable>
     );
 
 }
