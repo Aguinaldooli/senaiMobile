@@ -7,15 +7,16 @@ import ButtonArea from "./components/ButtonArea";
 import CourseModal from "./components/CourseModal";
 
 export default function DashBoard() {
-
+  // vamos controlar abertura do balão 
   const [modalVisible, setModalVisible] = useState(false);
 
+  // guardar as informações do curso selecionado 
   const [selectedCourse, setSelectedCourse] = useState({
     title: "",
     description: "",
     professor: "",
     hours: "",
-    image: null
+    image: null //para iniciar vazio 
   });
 
   return (
@@ -32,7 +33,7 @@ export default function DashBoard() {
         describe="Desenvolvimento Mobile"
         likes={12}
         image={require("../assets/cursoreactnative.png")}
-
+        //pelo o onPrress chamamos a função que vai abrir o modal e setar as informações
         onPress={function () {
 
           setSelectedCourse({
@@ -89,14 +90,16 @@ export default function DashBoard() {
 
         }}
       />
-
+        //Nosso componente modal
       <CourseModal
-        visible={modalVisible}
 
+        //função que vai cuidar da visibilidade
+        visible={modalVisible}
+        // função para cuidar de quando vai fechar 
         onClose={function () {
           setModalVisible(false);
         }}
-
+        //e as informações que vão ser passada para o balão 
         title={selectedCourse.title}
         description={selectedCourse.description}
         professor={selectedCourse.professor}

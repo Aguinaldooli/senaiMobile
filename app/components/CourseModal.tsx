@@ -22,6 +22,7 @@ export default function CourseModal({
     image,
 }: CourseModalProps) {
     return (
+        // Modal nativo do React Native
         <Modal
             visible={visible}
             transparent={true}
