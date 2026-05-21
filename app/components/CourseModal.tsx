@@ -1,5 +1,5 @@
 import { Modal, View, Text, Image, Pressable } from "react-native";
-import styles from "../css/CourseModal";
+import styles from "../css/CourseModalStyle";
 
 type CourseModalProps = {
     visible: boolean;
